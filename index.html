@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quotes</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-quote-box">
+  <div class="text-quote">
+    <i class="fa fa-quote-left fa-2x"></i>
+  </div>
+  <div class="text-box">
+    <span id="text"></span>
+  </div>
+  <div class="text-quote">
+    <i class="fa fa-quote-right fa-2x"></i>
+  </div>
+  <div class="author-name">
+    - <span id="author"></span>
+  </div>
+  <div class="quote-buttons">
+    <a class="button" id="tweet">
+      <i class="fa fa-twitter-square button" style="color:white; font-size:45px"></i></a>
+    <button class="button-1" id="get-quote">Get Quote</button>
+  </div>
+</div>
+
+<script>
+
+var testQuote = [
+  {
+    author: "BB King",
+    quote: "The beautiful thing about learning is that nobody can take it away from you."
+  },
+  {
+    author: "John Lennon",
+    quote: "When I was 5 years old, my mother always told me that happiness was the key to life. When I went to school, they asked me what I wanted to be when I grew up. I wrote down 'happy'. They told me I didn't understand the assignment, and I told them they didn't understand life."
+  },
+  {
+    author: "Ray Charles",
+    quote: "Music is about the only thing left that people don't fight over."
+  },
+  {
+    author: "George Carlin",
+    quote: "Those who dance are considered insane by those who can't hear the music."
+  },
+  {
+    author: "Billy Joel",
+    quote: "I think music in itself is healing. It's an explosive expression of humanity. It's something we are all touched by. No matter what culture we're from, everyone loves music."
+  },
+  {
+    author: "Frank Zappa",
+    quote: "Without music to decorate it, time is just a bunch of boring production deadlines or dates by which bills must be paid."
+  },
+  {
+    author: "Stevie Ray Vaughan",
+    quote: "You see, we are here, as far as I can tell, to help each other; our brothers, our sisters, our friends, our enemies. That is to help each other and not hurt each other."
+  },
+  {
+    author: "Marcus Miller",
+    quote: "It's a great thing about being a musician; you don't stop until the day you die, you can improve. So it's a wonderful thing to do."
+  },
+  {
+    author: "David Bowie",
+    quote: "I don't know where I'm going from here, but I promise it won't be boring."
+  },
+  {
+    author: "Sting",
+    quote: "If you play music with passion and love and honesty, then it will nourish your soul, heal your wounds and make your life worth living. Music is it's own reward."
+  },
+  {
+    author: "James Brown",
+    quote: "Hair is the first thing. And teeth the second. Hair and teeth. A man got those two things he's got it all."
+  },
+  {
+    author: "Bono",
+    quote: "My heroes are the ones who survived doing it wrong, who made mistakes, but recovered from them."
+  },
+  {
+    author: "Teddy Roosevelt",
+    quote: "Let us rather run the risk of wearing out than rusting out."
+  },
+  {
+    author: "Bob Marley",
+    quote: "One good thing about music, when it hits you, you feel no pain."
+  },
+  {
+    author: "Prince",
+    quote: "Being around great musicians always gives me this energy I've had it my whole career."
+  }
+];
+
+// fetch page elements
+var quote = document.getElementById('text');
+var author = document.getElementById('author');
+var quoteButton = document.getElementById('get-quote');
+var tweetButton = document.getElementById('tweet');
+var random;
+
+//load quote on page load
+window.onload = quoteGenerator;
+
+//quote function
+function quoteGenerator(){
+  random = Math.floor(Math.random() * testQuote.length);
+  quote.innerHTML = testQuote[random].quote;
+  author.innerHTML = testQuote[random].author;
+}
+
+//tweet function
+function runTweet() {
+   var twwt = testQuote[random].quote + ' ' + '- ' + testQuote[random].author;
+   var twtLink = "http://twitter.com/home/?status=" + encodeURIComponent(twwt);
+  if (twwt.length > 140) {
+    alert("Your tweet needs to be less than 140 characters!");
+  } else {
+   window.open(twtLink)
+  }
+}
+
+//hook up event handlers
+quoteButton.addEventListener('click', quoteGenerator);
+tweetButton.addEventListener('click', runTweet);
+
+  
+</script> 
+
+
+</body>
+</html>

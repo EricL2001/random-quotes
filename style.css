@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(45deg, #6B6F72, #c9511d);
+  background-repeat: repeat;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+ }
+
+.main-quote-box {
+  position: relative;
+  background: #21547a;
+  display: block;
+  border-radius: 5px; 
+  width: 500px;
+  margin: 100px auto 0px auto;
+  padding: 15px 15px 15px 15px;
+  box-shadow: 10px 10px 5px #888888
+}
+
+.text-box {
+  margin-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 12px;
+  padding-left: 12px;
+  text-align: center;
+  font-size: 20px;
+  color: white; 
+}
+
+.author-name {
+  padding-bottom: 20px;
+  padding-right: 20px;
+  text-align: right;
+  font-size: 18px;
+  color: white;
+}
+.text-quote {
+  color: white;
+  text-align: center;
+}
+.quote-buttons {
+  margin: auto;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.button {
+  padding-left: 8px;
+  cursor:
+}
+.button:hover {
+  cursor: pointer;
+}
+
+.button-1 {
+  padding: 12px 18px;
+  display: inline-block;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  color: #c9511d;
+  font-weight: bold;
+  margin-left: 145px;
+}
+
+button:hover {
+  color: white;
+  background-color: #c9511d;
+  border: none;
+  cursor: pointer;
+}
